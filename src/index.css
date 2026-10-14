@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #1d4ed8;
-  --color-brand-secondary: #1f2937;
+  --color-brand-primary: #0f172a;
+  --color-brand-secondary: #1e293b;
   --color-brand-background: #334155;
+}
+
+* {
+  outline: none;
+  margin: none;
+  padding: none;
+  box-sizing: border-box;
 }
