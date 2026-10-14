@@ -1,11 +1,6 @@
-import {Routes } from "react-router";
+import { Routes } from "react-router";
 function App() {
-  return (
-    <Routes>
-
-    </Routes>
-
-  );
+  return <Routes></Routes>;
 }
 
 export default App;
