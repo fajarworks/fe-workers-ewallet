@@ -12,13 +12,13 @@ import {
 
 //dummy data
 const contacts = [
-  { id: 1, name: "Ghaluh 1", phone: "(239) 555-0108" },
-  { id: 2, name: "Albert Flores", phone: "(239) 555-0108" },
-  { id: 3, name: "Bessie Cooper", phone: "(239) 555-0108" },
-  { id: 4, name: "Jacob Jones", phone: "(239) 555-0108" },
-  { id: 5, name: "Leslie Alexander", phone: "(239) 555-0108" },
-  { id: 6, name: "Cody Fisher", phone: "(239) 555-0108" },
-  { id: 7, name: "Ralph Edwards", phone: "(239) 555-0108" },
+  { id: 1, name: "Ghaluh 1", phone: "0815-555-0108" },
+  { id: 2, name: "Albert Flores", phone: "0812-555-0108" },
+  { id: 3, name: "Bessie Cooper", phone: "0896-555-0108" },
+  { id: 4, name: "Jacob Jones", phone: "0871-555-0108" },
+  { id: 5, name: "Leslie Alexander", phone: "0830-555-0108" },
+  { id: 6, name: "Cody Fisher", phone: "0877-555-0108" },
+  { id: 7, name: "Ralph Edwards", phone: "0855-555-0108" },
 ];
 
 const navigation = [
@@ -40,13 +40,25 @@ function FindPeople() {
       .includes(search.toLowerCase()),
   );
 
-  const favoritesToggle = contacts;
+  const toggleFavorites = (id) => {
+    if (favorites.includes(id)) {
+      setFavorites(favorites.filter((item) => item !== id));
+    } else {
+      setFavorites([...favorites, id]);
+    }
+  };
+
+  const selectContact = (contact) => {
+    setSelectedId(contact.id);
+  };
 
   return (
-    <div>
-      <header className="bg-brand-primary p-3 text-white">Transfer</header>
+    <div className="mx-auto flex h-dvh w-full flex-col">
+      <header className="bg-brand-primary p-3 text-white h-14 flex items-center">
+        Transfer
+      </header>
 
-      <main className="bg-white p-4 flex-1">
+      <main className="overflow-y-auto bg-white p-4 flex-1 min-h-0">
         <h3 className="mb-3 font-bold">Find People</h3>
         <div className="flex mb-4 rounded-md border border-gray-300 items-center">
           <input
@@ -68,9 +80,10 @@ function FindPeople() {
             >
               <button
                 type="button"
-                className="flex items-center gap-5 text-left"
+                onClick={() => selectContact(contact)}
+                className="flex flex-1 items-center gap-5 text-left"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-100 text-sm font-semibold text-brand-primary">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-100 text-sm font-semibold text-brand-primary lg:grid lg:grid-cols-[60px_1fr_1fr] lg:gap-6">
                   {contact.name.charAt(0)}
                 </div>
                 <div>
@@ -79,8 +92,19 @@ function FindPeople() {
                 </div>
               </button>
 
-              <button type="button">
-                <FiStar size={25} className="" />
+              <button
+                type="button"
+                onClick={() => toggleFavorites(contact.id)}
+                className="cursor-pointer"
+              >
+                <FiStar
+                  size={25}
+                  className={
+                    favorites.includes(contact.id)
+                      ? "fill-yellow-400 text-yellow-400"
+                      : "text-gray-400"
+                  }
+                />
               </button>
             </div>
           ))}
