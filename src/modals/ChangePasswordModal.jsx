@@ -84,7 +84,7 @@ const ChangePasswordModal = ({ isShowModal, setShowModal }) => {
                 onClick={() => setEyeExistPass((prev) => !prev)}
                 className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-500 cursor-pointer"
               >
-                {eyeExistPass ? <FiEye /> : <FiEyeOff />}
+                {eyeExistPass ? <FiEyeOff /> : <FiEye />}
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ const ChangePasswordModal = ({ isShowModal, setShowModal }) => {
                 onClick={() => setEyeNewPass((prev) => !prev)}
                 className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-500 cursor-pointer"
               >
-                {eyeNewPass ? <FiEye /> : <FiEyeOff />}
+                {eyeNewPass ? <FiEyeOff /> : <FiEye />}
               </div>
             </div>
             {errNewPass && (
@@ -134,7 +134,7 @@ const ChangePasswordModal = ({ isShowModal, setShowModal }) => {
                 onClick={() => setEyeNewConfirmPass((prev) => !prev)}
                 className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-500 cursor-pointer"
               >
-                {eyeConfirmPass ? <FiEye /> : <FiEyeOff />}
+                {eyeConfirmPass ? <FiEyeOff /> : <FiEye />}
               </div>
             </div>
             {errConfirmPass && (
