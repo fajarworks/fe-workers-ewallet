@@ -10,9 +10,9 @@ import { NavLink } from "react-router";
 
 const Sidebar = () => {
   const baseClass =
-    "flex gap-5 cursor-pointer items-center p-2 rounded-xl hover:bg-blue-600 hover:text-white";
+    "flex gap-5 cursor-pointer transition-colors duration-300 ease-in-out items-center p-2 rounded-xl hover:bg-brand-secondary hover:text-white";
 
-  const activeClass = "bg-blue-600 text-white";
+  const activeClass = "bg-brand-secondary text-white";
 
   return (
     <>
@@ -63,7 +63,7 @@ const Sidebar = () => {
             <LuUser size={28} />
             <h1 className="font-light">Profile</h1>
           </NavLink>
-          <button className="flex gap-5 cursor-pointer text-red-600 items-center p-3 rounded-xl hover:bg-blue-500 hover:text-white">
+          <button className="flex gap-5 cursor-pointer transition-colors duration-300 ease-in-out text-red-600 items-center p-3 rounded-xl hover:bg-brand-red hover:text-white">
             <LuLogOut size={24} className="rotate-180" />
             <h3>Keluar</h3>
           </button>
