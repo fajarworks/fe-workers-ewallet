@@ -13,7 +13,7 @@ const Footer = () => {
         <section className="flex flex-col items-center lg:w-1/3  gap-5">
           <div className="flex w-full items-center gap-4">
             <BsWallet2 className="text-white" />
-            <h1 className="text-3xl text-white">Russel Pay</h1>
+            <h1 className="text-3xl text-white">E-Wallet</h1>
           </div>
 
           <p className="text-white text-xl font-light">
